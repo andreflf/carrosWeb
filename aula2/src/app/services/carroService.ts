@@ -10,7 +10,6 @@ import { environment } from '../../environments/environment';
 export class CarroService {
 
   http = inject(HttpClient);
-
 //environment para usar o ip em produçao e url localhost em dev
   API = environment.SERVIDOR + "/api/carro";
 

@@ -10,8 +10,6 @@ import { environment } from '../../environments/environment';
 export class MarcaService {
   
   http = inject(HttpClient);
-
-
   API = environment.SERVIDOR + "/api/carro/marca";
 
   constructor() {
