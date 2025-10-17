@@ -8,10 +8,14 @@ import { Marcasdetails } from './components/marcas/marcasdetails/marcasdetails';
 import { Acessorioslist } from './components/acessorios/acessorioslist/acessorioslist';
 import { Acessoriosdetails } from './components/acessorios/acessoriosdetails/acessoriosdetails';
 import { loginGuard } from './auth/login-guard';
+import { UsuariosForm } from './components/usuario/usuarios-form/usuarios-form';
+import { UsuariosList } from './components/usuario/usuarios-list/usuarios-list';
+import { AlterarSenha } from './components/usuario/alterar-senha/alterar-senha';
 
 export const routes: Routes = [
     {path: "", redirectTo: "login", pathMatch:"full"},
     {path: "login", component: Login},
+    {path: "registre-se", component: UsuariosForm},
     {path:"admin",  component:Principal, canActivate: [loginGuard], children:[
         {path:"carros", component:Carroslist},
         {path: "carros/new", component:Carrosdetails},
@@ -21,6 +25,10 @@ export const routes: Routes = [
         {path: "marcas/edit/:id", component:Marcasdetails},
         {path:"acessorios", component:Acessorioslist},
         {path: "acessorios/new", component:Acessoriosdetails},
-        {path: "acessorios/edit/:id", component:Acessoriosdetails},    
+        {path: "acessorios/edit/:id", component:Acessoriosdetails},
+        {path: "usuarios", component: UsuariosList},
+        {path: "usuarios/new", component: UsuariosForm},
+        {path: "usuarios/edit/:id", component: UsuariosForm},
+        {path: "alterar-senha", component: AlterarSenha},    
     ]}
 ];
