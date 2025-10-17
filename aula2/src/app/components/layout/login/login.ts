@@ -1,6 +1,6 @@
 import { Component, inject} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { LoginService } from '../../../auth/login.service';
 import { LoginM } from '../../../models/login-m';
@@ -8,7 +8,7 @@ import { LoginM } from '../../../models/login-m';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MdbFormsModule, FormsModule],
+  imports: [MdbFormsModule, FormsModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.scss'
 })

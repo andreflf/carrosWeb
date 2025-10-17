@@ -9,16 +9,20 @@
                 <div class="card-body">
                     <h3>Autentique-se</h3>
                     <mdb-form-control>
-                        <input mdbInput type="text" id="usuario" class="form-control" [(ngModel)]="loginM.username" (keyup.enter)="logar()" />
+                        <input mdbInput type="text" id="usuario" class="form-control" [(ngModel)]="loginM.username"
+                            (keyup.enter)="logar()" />
                         <label mdbLabel class="form-label" for="form1">Usuário</label>
                     </mdb-form-control>
                     <br>
                     <mdb-form-control>
-                        <input mdbInput type="password" id="senha" class="form-control" [(ngModel)]="loginM.password" (keyup.enter)="logar()"/>
+                        <input mdbInput type="password" id="senha" class="form-control" [(ngModel)]="loginM.password"
+                            (keyup.enter)="logar()" />
                         <label mdbLabel class="form-label" for="form1">Senha</label>
                     </mdb-form-control>
                     <br>
-                    <button type="button" class="btn btn-primary btn-rounded" mdbRipple (click)="logar()">Acessar</button>
+                    <button type="button" class="btn btn-primary btn-rounded" mdbRipple
+                        (click)="logar()">Acessar</button><br>
+                    <a [routerLink]="['/registre-se']" routerLinkActive="router-link-active" mdbRipple>ou Registre-se aqui</a>
                 </div>
             </div>
 
