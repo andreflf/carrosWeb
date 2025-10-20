@@ -3,7 +3,7 @@
   <!-- Container wrapper -->
   <div class="container-fluid">
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">{{loginService.getUsuarioLogado().username}}</a>
+    <a class="navbar-brand" href="#">Sistema de Carros |</a>
 
     <!-- Toggle button -->
     <button
@@ -25,26 +25,48 @@
     >
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        @if(loginService.hasRole("ADMIN")){
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="admin/carros">Carros</a>
         </li>
-      }
-      @if(loginService.hasRole("USER")){
         <li class="nav-item ">
           <a class="nav-link active" href="admin/marcas">Marcas</a>
         </li>
-      }
          <li class="nav-item ">
           <a class="nav-link active" href="admin/acessorios">Acessórios</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="login">Sair</a>
+        @if(loginService.hasRole("ADMIN")){
+         <li class="nav-item">
+          <a class="nav-link active" href="/admin/usuarios">Usuários</a>
         </li>
+      }
       </ul>
+
+      <button type="button" class="btn btn-primary">
+          Bem-vindo, {{loginService.getUsuarioLogado().username}}
+        </button>
+        <a
+          class="btn btn-success px-3"
+          (click)="modalAlterarSenha()"
+          role="button"
+          >Alterar Senha</a>
+          <a class= "color px-3" href="login">Sair</a>
     </div>
     <!-- Collapsible wrapper -->
   </div>
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
+
+<ng-template #modalAltera>
+
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Alterar Senha</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+  </div>
+  <div class="modal-body">
+
+    <app-alterar-senha (meuEvento)="meuEventoTratamento($event)"></app-alterar-senha>
+
+  </div>
+
+</ng-template>

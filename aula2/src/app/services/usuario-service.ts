@@ -39,12 +39,9 @@ export class UsuarioService {
     return this.http.put<string>(this.API+'/alterarSenha/'+id, null, {params: par, responseType: 'text' as 'json'});
   }
 
-//implementar!
-  //   findByNome(nome: string): Observable<Usuario[]>{
-  //   let par = new HttpParams()
-  //   .set('nome',nome);
-    
-  //   return this.http.get<Usuario[]>(this.API+'/findByNome', {params: par});
-  // }
+    findByNome(nome: string): Observable<Usuario[]>{
+    let par = new HttpParams().set('nome',nome);
+    return this.http.get<Usuario[]>(this.API+'/findByNome', {params: par});
+  }
   
 }
